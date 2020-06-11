@@ -1,3 +1,5 @@
+# FIXME replace pygame dependency
+# Should contain all the code that has to be replaced when replacing pygame.
 import pygame
 import math
 
