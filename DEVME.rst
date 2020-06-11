@@ -21,3 +21,30 @@ The file view:
 The monitor:
     Holding a button makes the monitor appear around the cursor.
     It shows hardware resources and the systray.
+
+files
+---
+/bin/ringlet
+/lib/pythonx.x/site-packages/ringlet/
+    The main program which only contains the front end and a simple demo.
+    For Windows maybe a zipapp would be feasable.
+/bin/ringlet-launcher
+    This checks the application that currently is focused and opens ringlet with the ring that's
+    configured for that app or the default.
+/usr/share/ringlet/rings/
+$HOME/.local/share/ringlet/rings/
+    The rings need a json file that specifies titles, icons, placement and actions.
+    A ring can have it's own directory for easy drop in of user made rings.
+/usr/share/ringlet/extensions/
+$HOME/.local/share/ringlet/extensions/
+    Extensions are placed in a directory in the apps config.
+    The extensions dir has an __init__.py .
+    A package manager is used to de-/activate them by editing the __init__.py .
+    When an extension has multiple files, it has it's own directory with an __init__.py .
+/etc/ringlet/rc.json (base config)
+$HOME/.config/ringlet/rc.json (user config)
+    The rc file contains global options for all rings.
+
+extensions
+---
+Extensions are written in python.
