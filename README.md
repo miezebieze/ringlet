@@ -1,13 +1,16 @@
 # scott-launcher
 
-Excuse this jumbled mess. I'm just trying to create the next major generation of graphical interfaces.
+Excuse this jumbled mess. I'm just prototyping at the moment.
+I chose python because it would be easy to extend it's functionality for non programmers.
+Pygame is just a drop in right now and will be replaced by something else sometime.
 
 inspiration
 ---
 THE GUI SHOULD BE A LOT BETTER by Scott Ross
+
 https://www.youtube.com/watch?v=AItTqnTsVjA&t=3940
 
-design
+design (wip)
 ---
 After launching the program, a ring shows up around the cursor.
 The ring is split into at most eight segments, each being associated with a child node.
