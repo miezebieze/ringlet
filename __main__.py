@@ -1,7 +1,6 @@
 #!/bin/python
 import time
 import sys
-import math
 
 from pypygame import Window, Ring
 from vec2d import Vec2d
