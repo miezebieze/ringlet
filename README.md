@@ -1,5 +1,14 @@
-I chose python because it would be easy to extend it's functionality for non programmers.  
-Only if performance is an issue, I consider a rewrite in another language.  
+A tool for controlling a computer with just the mouse.
+
+dependencies
+-----
+python-Xlib
+python
+
+run
+---
+git clone https://github.com/miezebieze/ringlet
+python ringlet
 
 inspiration
 ---
