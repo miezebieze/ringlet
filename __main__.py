@@ -1,45 +1,31 @@
-#!/bin/python
-import time
-import sys
+from enum import Enum
+from window import Window
 
-from pypygame import Window, Ring
-from vec2d import Vec2d
+D = Enum ('Directions','N NE E SE S SW W NW')
 
-colours = ['blue','magenta','red','orange','grey','white','yellow','green']
+selector_map = {
+        D.NW: [0.5,0.5], D.N: [1.5,0], D.NE: [2.5,0.5],
+        D.W: [0,1.5],                    D.E: [3,1.5],
+        D.SW: [0.5,2.5], D.S: [1.5,3], D.SE: [2.5,2.5],
+        }
 
-window = Window (size=(200,200))
-ring = Ring (window,rinner=50,router=100)
+selector_size = 100
+window_size = selector_size*4
 
-window.open ()
-window.center_mouse ()
+window = Window (window_size,window_size,selector_map,selector_size,selector_size)
 
-switch = True
-while window.isopen:
-    window.process_events ()
+# set actions here
+from functools import partial
+def say (something):
+    print (''.join (('Me: "',something,'"')))
 
-    mouse = Vec2d (window.mousepos)
-    mouse -= window.centre
-    mouse.angle += 90
-    mouse.angle += 180 / ring.segments
-    if mouse.angle < 0:
-        angle = 360+mouse.angle
-    else:
-        angle = mouse.angle
+window.actions[D.NW] = partial (say,'northwast')
+window.actions[D.N] = partial (say,'north')
+window.actions[D.NE] = partial (say,'neorthest')
+window.actions[D.W] = partial (say,'western')
+window.actions[D.E] = partial (say,'easy')
+window.actions[D.SW] = partial (say,'suess whest')
+window.actions[D.S] = partial (say,'sissy')
+window.actions[D.SE] = partial (say,'seoul')
 
-    if mouse.length > ring.ri:
-        segment = int (angle / (360 / ring.segments))
-        ring.colour = colours[segment]
-        switch = True
-        time.sleep (0.1)
-
-    #window.fill ()
-
-    if switch:
-        ring.draw ()
-        window.update ()
-        window.center_mouse ()
-        switch = False
-    time.sleep (0.03)
-
-else:
-    sys.exit ()
+window.go ()

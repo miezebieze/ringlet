@@ -1,16 +1,20 @@
 design (wip)
 ---
 After launching the program, a ring shows up around the cursor.
-The ring is split into at most eight segments, each being associated with a child node.
-When the cursor is moved over a segment, the cursor is reset to it's original position and the
-child node is opened. When the child node contains more child nodes, these extend into the ring view.
-When the child was an end node, some action is executed or when it was directory node, the directory
-view is opened.
+The ring is split into at most eight segments,
+  each being associated with a child node.
+When the cursor is moved over a segment, the cursor is reset to
+  the center and the child node is opened.
+  If the child node contains more child nodes, these extend into
+    a new ring view.
+  If the child was an end node, some action is executed.
+  If it's empty, the node creator is started.
 
 The basic view:
-    The eight items can be changed.
-        When empty, the creation menu is shown after clicking the segment.
-        When occupied, the item opens a new view.
+  The eight items can be changed.
+    When empty, the creation menu is shown after
+    clicking the segment.
+      When occupied, the item opens a new view.
 The file view:
     The files are organized in a circular fashion.
     The names are shown in half circles around them
