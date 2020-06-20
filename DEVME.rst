@@ -1,3 +1,5 @@
+Please view this file in raw mode. Github mangles it to unreadability.
+
 design (wip)
 ---
 After launching the program, a ring shows up around the cursor.
